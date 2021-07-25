@@ -1,0 +1,22 @@
+﻿[
+  {
+    "outputFile": "wwwroot/styles/Blank.css",
+    "inputFile": "wwwroot/styles/Blank.scss"
+  },
+  {
+    "outputFile": "wwwroot/styles/login/styles.css",
+    "inputFile": "wwwroot/styles/login/styles.scss"
+  },
+  {
+    "outputFile": "wwwroot/styles/admin-default-modal/styles.css",
+    "inputFile": "wwwroot/styles/admin-default-modal/styles.scss"
+  },
+  {
+    "outputFile": "wwwroot/styles/admin-default/styles.css",
+    "inputFile": "wwwroot/styles/admin-default/styles.scss"
+  },
+  {
+    "outputFile": "wwwroot/styles/default/styles.css",
+    "inputFile": "wwwroot/styles/default/styles.scss"
+  }
+]

@@ -1,0 +1,52 @@
+﻿///<reference path="../../common/utilities/utilities">
+body { background-color: $background !important;
+
+    &, main {
+        &, .container-fluid {
+            &, .page {
+                &, .side-bar { display: flex; flex-direction: column; flex: 1;
+
+                    .content-body {
+                        display: flex;
+                        flex: 1;
+                        padding: 20px;
+
+                        @include for-phone-only { padding: 0; }
+
+                        service[of] { flex: 1; }
+                    }
+                }
+                flex-direction: row !important; }
+        }
+    }
+}
+
+
+.container-fluid { align-items: stretch; perspective: 1500px; /* Define how many pixels the sidebar is placed from the view. */ }
+.page { display: flex; flex-flow: row wrap;
+
+    .left-panel {
+        display: none;
+
+        @include for-tablet-landscape-up { min-height: calc(100vh - #{$header-height}); flex: 0 0 $sidebar-width; max-width: $sidebar-width; display: block; opacity: 1; }
+
+        &.show { position: absolute; z-index: 100; animation-name: menu-slide-right-anim; animation-duration: 0.25s; animation-fill-mode: forwards; display: block; max-width: $sidebar-width; width: $sidebar-width; min-height: calc(100vh - #{$header-height}); background-color: $white;
+
+            li.visible-in-collapsed-only { display: block; }
+        }
+    }
+
+    .content { flex: 5; display: flex; padding-left: 0; padding-right: 0; flex-direction: column; position: relative;
+
+        .breadcrumb {
+            @include for-phone-only { margin-bottom: 0; }
+        }
+    }
+}
+.profile-icon { height: 2.4rem; width: 2.4rem; border-radius: 50%; object-fit: cover }
+
+.modal-dialog {
+    @media (min-width: 576px) { width: 80%; max-width: 1000px; }
+}
+
+.modal-content .modal-header, .modal-body { background-color: #e1e7eb; }

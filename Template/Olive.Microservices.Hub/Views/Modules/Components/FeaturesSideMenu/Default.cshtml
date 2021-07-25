@@ -1,0 +1,17 @@
+﻿@model ViewModel.FeaturesSideMenu
+@(Layout = null)
+<script>
+    console.log("window.location");
+    console.log(window.location);
+    var arrDomain = window.location.hostname.split('.');
+    arrDomain.splice(0, 1);
+    var domain = arrDomain.join('.');
+    document.domain = domain;
+</script>
+<!-- «Start| FeaturesSideMenu» -->
+<div data-module="FeaturesSideMenu" class="features-side-menu">
+   @Html.StartupActionsJson()
+   @info.Markup.Raw()
+</div>
+<!-- «End| FeaturesSideMenu» -->
+

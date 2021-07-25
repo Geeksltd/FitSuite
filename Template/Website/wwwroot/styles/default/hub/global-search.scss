@@ -1,0 +1,36 @@
+﻿///<reference path="../../common/utilities/utilities">
+
+.global-search { padding: 10px;
+    input { background: transparent; border-color: $gray-600; color: $gray-400;}
+}
+
+.global-search-panel {  position: relative; 
+    .loading-div { position: absolute; top: 5px; right: 5px; color: $gray-500; }
+}
+
+.global-search-result-panel { position: absolute;  color: rgb(33, 37, 41);  background-color: white; overflow-y: scroll; min-height: 665px; margin: 2px 0 0 0; box-shadow: rgb(0, 0, 0) 0px 0px 10px -3px; z-index: 4; width: 98vw; left: 0px;
+    li:hover { background-color: $gray-100; }
+
+    .search-container { display: flex; flex-wrap: wrap; margin-bottom: 10px;
+
+        .search-item { width: 283px; margin: 20px;
+            .search-title { color: $geeks-dark-green; font-weight: bold; margin-bottom: 5px;
+
+                i { margin-right: 5px; color: #137372; }
+            }
+
+            ul { list-style: none; padding: 0;
+                li { border-bottom: 1px solid #f0f0f0; padding-bottom: 5px; min-height: 36px; padding-top: 4px;
+                    a { display: block; width: 100%; padding: 0 0 5px 0; color: #313234;  }
+
+                    div.desc {  color: rgb(170, 170, 170); font-family: Lato, Helvetica Neue, Arial, Helvetica, sans-serif; font-feature-settings: normal; font-kerning: auto; font-language-override: normal; font-optical-sizing: auto; 
+                               font-size: .9rem; font-size-adjust: none; font-stretch: 100%; font-style: italic; font-variant: normal; font-variant-alternates: normal; font-variant-caps: normal; font-variant-east-asian: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-position: normal; font-variation-settings: normal; font-weight: 400; line-height: 16px; list-style-image: none; list-style-position: outside; list-style-type: none; outline-color: rgb(170, 170, 170); outline-style: none; outline-width: 0px;  }
+
+                    .icon { float: left; margin-right: 2px;
+                        img { max-width: 30px; float: left; margin-right: 3px; }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+﻿///<reference path="../../common/utilities/utilities">
+
+.task-bar, .task-bar #taskBarCollapse { transition: all 0.3s ease-in-out; }
+.task-bar { background-color: $gray-700; flex: 1; flex-direction: column; min-height: 100vh; min-width: 300px;
+
+    &.collapsed #taskiFram-container > div { display: none !important; }
+
+    &.collapsed { min-width: 0px; flex: 0; }
+
+    #taskBarCollapse { width: 25px; left: -24px; padding-left: 10px; height: 48px; background: $gray-700; box-shadow: none; outline: none !important; border: none; position: absolute; top: 13px; color: #ffffff; border-top-left-radius: 24px; border-bottom-left-radius: 24px;
+
+        &:hover { cursor: pointer; background-color: #137372; }
+    }
+
+    #taskiFram-container { display: flex; width: 100%; border: 0; position: relative; flex-direction: column; flex: 1; }
+}

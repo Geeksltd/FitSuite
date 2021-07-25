@@ -1,0 +1,46 @@
+﻿.full-menu-container { @extend .pane; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: start;
+
+    .full-menu-item { margin: 0 20px; color: #fff; flex-grow: 10; position: relative; min-width: 180px; cursor: pointer; padding-bottom: 40px;
+
+        &.no-item { height: 100px;
+
+            .btn { width: 100%; }
+        }
+
+        &:not(.no-item) {
+            &.scrolled {
+                &::before { background-image: linear-gradient(top,rgba(255,255,255,1),rgba(220,220,220,.3)); background-image: -moz-linear-gradient(top,rgba(255,255,255,1),rgba(220,220,220,.3)); background-image: -ms-linear-gradient(top,rgba(255,255,255,1),rgba(220,220,220,.3)); background-image: -o-linear-gradient(top,rgba(255,255,255,1),rgba(220,220,220,.3)); background-image: -webkit-linear-gradient(top,rgba(255,255,255,1),rgba(220,220,220,.3)); content: "\00a0"; height: 100%; position: absolute; width: 100%; background-size: 100% 50px; background-repeat: no-repeat; background-position: bottom; }
+            }
+        }
+
+        ul { background: transparent; position: relative; top: 50px; width: 100%; height: calc(100% - 55px); padding: 0; border-radius: 2px; overflow-y: auto; scrollbar-width: none;
+
+            &::-webkit-scrollbar { display: none; }
+
+            li { color: #333; display: block; padding: 2px 0;
+
+                a { position: relative; padding-left: 30px; color: #444; font-size: .9rem;
+
+                    i { position: absolute; left: 5px; top: 5px; }
+                }
+            }
+
+            > li > ul { top: 0; margin-bottom: 7px;
+
+                > li > a { padding-left: 60px;
+
+                    i { left: 35px; }
+                }
+            }
+        }
+
+        &.selected { height: 120px; }
+
+        > i { position: absolute; right: 5px; font-size: 4rem; opacity: 0.3; top: 15px; }
+
+        > h3 { position: absolute; top: 15px; font-weight: 600; border-bottom: 2px solid #282828; width: 100%; padding: 0 0 5px 0; margin: 0; font-size:1.2rem;
+
+            > a { color: #333; }
+        }
+    }
+}

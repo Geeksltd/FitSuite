@@ -1,0 +1,26 @@
+﻿///<reference path="../../utilities/utilities">
+
+.form-group {
+    margin-left: 0;
+    margin-right: 0;
+    .control-label { width: 150px; }
+
+    .group-control {
+        min-width: $s-control-input-min-width;        
+        padding-right: 0;
+        padding-left: 0;        
+    }
+
+    @include for-phone-only { flex-direction: column; }
+
+    @include for-tablet-portrait-up {
+        &.range-input {
+            .group-control { display: flex;
+
+                .form-control { border-radius: $border-radius; }
+
+                .range-label { padding: 0.5rem 0.5rem 0 0.5rem; }
+            }
+        }
+    }
+} 

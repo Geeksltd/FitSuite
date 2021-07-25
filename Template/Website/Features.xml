@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<features>
+	<Hub service="Hub" url="" pass="projectId,projectName,accountName" icon="fas fa-laptop-code"/>
+	<Features service="Scope" url="/use-case" pass="projectId,projectName,accountName" icon="fas fa-laptop-code"/>
+	<Guesstimate service="Scope" url="/preliminary-estimate" pass="projectId,projectName,accountName" icon="fas fa-laptop-code"/>
+	<Plan service="Plan" url="/" pass="projectId,projectName,accountName" icon="fas fa-laptop-code"/>
+	<Discover service="Discover" url="/" pass="projectId,projectName,accountName" icon="fas fa-laptop-code"/>
+	<Designer service="Designer" url="/" pass="projectId,projectName,accountName" icon="fas fa-laptop-code"/>
+	<Refine service="Refine" url="/" pass="projectId,projectName,accountName" icon="fas fa-laptop-code"/>
+	<Estimator service="Estimator" url="/home/estimator" pass="projectId,projectName,accountName" icon="fas fa-laptop-code"/>
+
+	<Stories service="Stories" url="/user-story" pass="projectId,projectName,accountName" icon="fas fa-laptop-code"/>
+	<!--<User-story service="Stories" url="/user-story/page-allocations-list" pass="projectId,projectName,accountName" icon="fas fa-laptop-code"/>-->
+
+
+	<Entities service="Entities" url="/"  pass="projectId,projectName,accountName" icon="fas fa-laptop-code"/>
+	<Microservices service="Microservices" url="/"  pass="projectId,projectName,accountName" icon="fas fa-laptop-code"/>
+	<DeliveryPlan service="DeliveryPlan" url="/" pass="projectId,projectName,accountName" icon="fas fa-laptop-code"/>
+</features>

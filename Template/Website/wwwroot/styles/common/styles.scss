@@ -1,0 +1,7 @@
+﻿@import "utilities/utilities";
+@import "components/components";
+
+#alertify { max-height: 80%; overflow: auto;
+    .alertify-inner { height: 100%; }
+    .alertify-message { max-height: 80%; display: inline-block; overflow: auto; max-width: 100%; height: 80%; }
+}

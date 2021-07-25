@@ -1,0 +1,15 @@
+﻿///<reference path="../../utilities/utilities">
+
+$check-box-size: 1.4rem;
+
+.checkbox-helper { display: inline-block; width: $check-box-size; height: $check-box-size; border: $border-width solid $border-color; border-radius: $input-border-radius; background-color: $input-bg; margin-right: 5px; }
+
+input[type='checkbox'].handled { opacity: 0; position: absolute;
+
+    &:focus + .checkbox-helper { box-shadow: 0 0 0 0 #fff, 0 0 0 0.2rem adjust-color($primary, $alpha: -.5); border: $border-width solid $primary; }
+
+    &:checked + .checkbox-helper {
+
+        &:before { outline: none; display: inline-block; width: $check-box-size; height: $check-box-size; content: ''; background-color: $primary; border-radius: $input-border-radius; position: relative; left: $border-width; top: -$border-width; float: right; }
+    }
+}

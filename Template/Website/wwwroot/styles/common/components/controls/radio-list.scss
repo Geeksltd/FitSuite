@@ -1,0 +1,28 @@
+﻿///<reference path="../../utilities/utilities">
+
+.radio-list {
+    input[type='radio'].handled, input[type='radio'] {
+        position: absolute !important;
+        clip: rect(0, 0, 0, 0);
+        height: 1px;
+        width: 1px;
+        border: 0;
+        overflow: hidden;
+
+        &:focus + .radio-helper {
+            cursor: pointer;
+        }
+    }
+
+    label {
+        @extend .btn;
+
+        .fas {
+            margin-right: 5px;
+        }
+    }
+
+    .form-check-inline {
+        margin:0 0.5rem 0.5rem 0;       
+    }
+}

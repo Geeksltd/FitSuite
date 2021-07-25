@@ -1,0 +1,55 @@
+﻿///<reference path="../../common/utilities/utilities">
+
+.gridster-holder { width: 100%; display: flex; position: relative;
+
+    .border-view {
+        position: absolute;
+        top: -61px;
+        right: 0;
+        width: 200px;
+        height: 31px;
+        border-radius: 5px;
+        border: solid 1px $gray-500;        
+        background:transparent;
+        padding: 5px 10px;
+        @include media-breakpoint-down(md) { top: 3px; right: 2px; }
+    }
+
+    .gridster {
+        ul { margin: 0; padding: 0; display: flex; flex-wrap: wrap;
+
+            &:last-child { margin-bottom: 20px; }
+
+            li { list-style: none; border: none; background-color: #fff; overflow: hidden; margin: 10px 15px 7px 0; min-height: 301px; width: 288px; border-radius: 10px;
+
+                header { background: #42AAA9; display: block; font-size: 12pt; font-weight: 500; text-align: center; line-height: normal; padding: 6px 0 6px; color: #fff;
+
+                    a { color: #fff }
+                }
+
+                a.header { background: #42AAA9; display: block; font-size: 12pt; font-weight: 500; text-align: center; line-height: normal; padding: 6px 0 6px; color: #fff;
+
+                    a { color: #fff }
+                }
+
+                iframe { width: 100%; height: 268px; border: none; }
+
+                main { height: 268px; overflow-y: auto; overflow-x: hidden; background: #fff;
+
+                    &::-webkit-scrollbar { width: 7px; }
+
+                    &::-webkit-scrollbar-thumb { background: #bbb; border-radius: 10px; height: 25px; }
+                }
+            }
+        }
+
+        .gs-w { -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); }
+
+        .preview-holder { border: none !important; border-radius: 0 !important; background: #B0BEC5 !important; }
+    }
+
+    .right-side { position: absolute; right: 0; top: 0; height: 100%;
+
+        iframe { border: none; height: 100% !important; }
+    }
+}

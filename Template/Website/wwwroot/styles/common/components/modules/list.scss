@@ -1,0 +1,95 @@
+﻿///<reference path="../../utilities/utilities">
+
+.empty-list { padding: 15px 0; }
+
+.grid {
+    @extend .table;
+    @extend .table-hover;
+
+    .profile-photo img { height: 32px; border-radius: 16px; }
+
+    .actions { white-space: nowrap; width: 1px; text-align: center; }
+
+    & > tbody > tr.highlighted { background: $gray-300; }
+
+    tbody tr td { vertical-align: middle;
+
+        .btn {
+            @include remove-btn-style();
+
+            .fa { color: $input-color; }
+
+            &:hover .fa { color: $primary; }
+        }
+
+        img { max-width: 200px; }
+    }
+}
+
+
+// Grid sorting
+th.sort-ascending i {
+    @extend .fas;
+    @include fa-icon();
+    margin-left: 20px;
+
+    &:before { content: $fa-var-sort-asc; }
+}
+
+th.sort-descending i {
+    @extend .fas;
+    @include fa-icon();
+    margin-left: 20px;
+
+    &:before { content: $fa-var-sort-desc; }
+}
+
+.select-grid-cols {
+    div.select-cols { position: absolute; z-index: 10000; display: none; border: 1px solid #cccccc; border-radius: 4px; padding: 15px; background: #fff; }
+
+    .cancel {
+        @extend .btn;
+        @extend .btn-secondary;
+        @extend .btn-sm;
+    }
+
+    .apply {
+        @extend .btn;
+        @extend .btn-primary;
+        @extend .btn-sm;
+    }
+}
+
+
+.grid {
+    @include make-r-grid-table-view;
+
+    thead {
+        @extend .r-grid-body;
+
+        tr {
+            @extend .r-grid-head-row;
+
+            th {
+                @extend .r-grid-head-cell;
+
+                &, a { background-color: $gray-600; color: $on-color-primary; font-weight: normal; color: $gray-400; }
+            }
+        }
+    }
+
+    tbody {
+        @extend .r-grid-body;
+
+        tr {
+            @extend .r-grid-row;
+
+            th {
+                @extend .r-grid-cell;
+            }
+        }
+    }
+}
+
+// TODO: it does not look right at all.
+.item-archived { background-color: $disabled-bg-color; }

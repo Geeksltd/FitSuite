@@ -1,0 +1,60 @@
+$primary: #43aaa9;
+$secondary: #ced4da;
+
+@import "../lib/bootstrap/scss/_functions";
+@import "../lib/bootstrap/scss/_variables";
+@import "../lib/bootstrap/scss/_mixins";
+
+
+
+$gray-100: #f3f3f5;
+$gray-200: #e9ecef;
+$gray-300: #dfe1e5;
+$gray-400: #ccced6;
+
+$gray-500: #a6aab7;
+$gray-600: #606273;
+$gray-700: #4A4C59;
+$gray-800: #383B45;
+$gray-900: #272930;
+
+
+$label-margin-bottom:0;
+$font-family-sans-serif: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$h3-font-size: $font-size-base * 1.4;
+$breadcrumb-padding-y: 1rem ;
+$line-height-computed: floor(($font-size-base * $line-height-base));
+$color-primary-darken: #0b8382;
+$geeks-dark-green: $color-primary-darken;
+$on-color-primary: #fff;
+$black-primary: #232323;
+$gray-background: #F2F2F2;
+$border-color: #CFCFCF;
+$light-gray: #E6E6E6;
+$black: #000000;
+$error: #FF0000;
+$geeks-dark-green: rgba(11, 131, 130, 0.8);
+$disabled-opacity: .6;
+$disabled-bg-color: rgba(230,230,230, .4);
+$background: #E1E7EB;
+
+$breadcrumb-bg: $gray-400;
+$breadcrumb-margin-bottom:0;
+
+$grid-gutter-width: 0;
+
+$header-height: 4.5rem;
+$sidebar-width: 22rem;
+$s-control-input-min-width: 22rem;
+$default-font-size: 1.4rem;
+
+$h2-font-size:2.5rem;
+
+@mixin make-column-lg($ncol,$gutter: $grid-gutter-width) {
+    $grid-gutter-width: $gutter;
+    @include make-col-ready();
+
+    @include media-breakpoint-up(lg) { //is equal to: @media (min-width: 992px) { ... }
+        @include make-col($ncol);
+    }
+}

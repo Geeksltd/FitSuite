@@ -1,0 +1,43 @@
+﻿///<reference path="../../utilities/utilities">
+
+$radio-size: 1.5rem;
+
+input[type='radio'].handled {
+    opacity: 0;
+    position: absolute;
+
+    &:focus + .radio-helper {
+        box-shadow: 0 0 0 0 #fff, 0 0 0 0.2rem adjust-color($primary, $alpha: -.5);
+        border: $border-width solid $primary;
+    }
+
+    &:checked + .radio-helper {
+
+        &:before {
+            outline: none;
+            display: inline-block;
+            height: $radio-size;
+            width: $radio-size;
+            border-radius: 50%;
+            content: '';
+            background-color: $primary;
+            position: relative;
+            left: $border-width;
+            top: -$border-width;
+            float: right;
+        }
+    }
+
+    & + .radio-helper + label {
+        padding-left: 0.3rem;
+    }
+}
+
+.radio-helper {
+    display: inline-block;
+    width: $radio-size;
+    height: $radio-size;
+    border: $border-width solid $border-color;
+    border-radius: 50%;
+    background-color: $input-bg;
+}

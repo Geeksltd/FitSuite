@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "olive/*": [ "wwwroot/lib/olive.microservices.hubjs/dist/types/olive.mvc/typings/*" ],
+      "app/*": [ "wwwroot/lib/olive.microservices.hubjs/dist/types/hub/*" ],
+      "hub/*": [ "wwwroot/scripts/*" ]
+    },
+    "module": "amd",
+    "target": "es6",
+    "sourceMap": true,
+    "noImplicitUseStrict": true,
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false
+  },
+  "compileOnSave": true,
+  "exclude": [
+    "wwwroot/lib/find-up",
+    "wwwroot/lib/ansi-styles",
+    "wwwroot/lib/yargs",
+    "bin",
+    "obj"
+  ]
+}

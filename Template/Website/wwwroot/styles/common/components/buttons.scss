@@ -1,0 +1,13 @@
+﻿///<reference path="../utilities/utilities">
+.buttons-row {
+    text-align: right;
+
+    &.top-buttons-row {
+        float: right;
+        margin-top:0.6rem;
+    }
+}
+
+.btn.loading-action-result {
+    @extend .text-muted;
+} 

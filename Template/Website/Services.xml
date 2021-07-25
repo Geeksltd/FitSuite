@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<services uat="on.uat.co" production="visualspec.local.com">
+  <Hub url="http://hub.visualspec.local.com:8685" production="hub" />
+  <Scope url="http://scope.visualspec.local.com:8659" production="scope" />
+  <Stories url="http://stories.visualspec.local.com:8658" production="stories" />
+  <user-story url="http://stories.visualspec.local.com:8658/stories" production="stories" />
+  <Estimator url="http://estimator.visualspec.local.com:8625" production="estimator" />
+  <Plan url="http://localhost:7878" production="scope" />
+  <Discover url="http://localhost:7878" production="scope" />
+  <Designer url="http://localhost:7878" production="scope" />
+  <Refine url="http://localhost:7878" production="scope" />
+  <Entities url="http://localhost:7878" production="scope" />
+  <Microservices url="http://localhost:7878" production="scope" />
+  <DeliveryPlan url="http://localhost:7878" production="scope" />
+  <Dashboard iframe="true" url="https://dashboard.app.geeks.ltd" uat="dashboard" sso="true" icon="fas fa-chalkboard-teacher" />
+</services>
+

@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <MvcRazorCompileOnPublish>true</MvcRazorCompileOnPublish>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <TieredCompilation>true</TieredCompilation>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1705;1998;NU1701</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DefaultItemExcludes>node_modules\**;$(DefaultItemExcludes)</DefaultItemExcludes>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+	<ItemGroup>
+		<Compile Remove="App_Data\**" />
+		<Compile Remove="wwwroot\scripts\bundling\**" />
+		<Compile Remove="wwwroot\scripts\featuresMenu\**" />
+		<Compile Remove="wwwroot\scripts\model\**" />
+		<Compile Remove="wwwroot\scripts\popupMenu\**" />
+		<Compile Remove="wwwroot\Styles\Customs\**" />
+		<Compile Remove="_M#_TEMP\Preview\**" />
+		<Content Remove="App_Data\**" />
+		<Content Remove="wwwroot\scripts\bundling\**" />
+		<Content Remove="wwwroot\scripts\featuresMenu\**" />
+		<Content Remove="wwwroot\scripts\model\**" />
+		<Content Remove="wwwroot\scripts\popupMenu\**" />
+		<Content Remove="wwwroot\Styles\Customs\**" />
+		<Content Remove="_M#_TEMP\Preview\**" />
+		<EmbeddedResource Remove="App_Data\**" />
+		<EmbeddedResource Remove="wwwroot\scripts\bundling\**" />
+		<EmbeddedResource Remove="wwwroot\scripts\featuresMenu\**" />
+		<EmbeddedResource Remove="wwwroot\scripts\model\**" />
+		<EmbeddedResource Remove="wwwroot\scripts\popupMenu\**" />
+		<EmbeddedResource Remove="wwwroot\Styles\Customs\**" />
+		<EmbeddedResource Remove="_M#_TEMP\Preview\**" />
+		<None Remove="App_Data\**" />
+		<None Remove="wwwroot\scripts\bundling\**" />
+		<None Remove="wwwroot\scripts\featuresMenu\**" />
+		<None Remove="wwwroot\scripts\model\**" />
+		<None Remove="wwwroot\scripts\popupMenu\**" />
+		<None Remove="wwwroot\Styles\Customs\**" />
+		<None Remove="_M#_TEMP\Preview\**" />
+	</ItemGroup>
+	<ItemGroup>
+		<Content Remove="Views\Web.config" />
+		<Content Remove="wwwroot\scripts\badgeNumber.ts" />
+		<Content Remove="wwwroot\scripts\expandCollapse.ts" />
+		<Content Remove="wwwroot\scripts\hubInstantSearch.ts" />
+		<Content Remove="wwwroot\scripts\hubModal.ts" />
+		<Content Remove="wwwroot\scripts\toggleCheckbox.ts" />
+		<Content Remove="wwwroot\scripts\widgetModule.ts" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="AppContentService.HubApi" Version="180720.11.4435" />
+		<PackageReference Include="AWSSDK.KeyManagementService" Version="3.5.1.6" />
+		<PackageReference Include="Google.Apis.Auth.AspNetCore3" Version="1.49.0" />
+		<PackageReference Include="Olive" Version="2.1.259" />
+		<PackageReference Include="Olive.EventBus" Version="2.1.127" />
+		<PackageReference Include="Olive.GlobalSearch.Source" Version="1.0.41" />
+		<PackageReference Include="Olive.Log.EventBus" Version="2.1.118" />
+		<PackageReference Include="PeopleService.HubEndPoint" Version="190417.10.2652" />
+		<PackageReference Include="System.Text.Encodings.Web" Version="5.0.1" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="Views\Modules\Components\ManualLogin\Default.cshtml" />
+		<None Include="Views\Modules\Components\SideBarRightModule\Default.cshtml" />
+		<None Include="Views\Modules\Components\TaskFrameModule\Default.cshtml" />
+		<None Include="Views\Modules\Components\TimesSheetModule\Default.cshtml" />
+		<None Include="Views\Pages\ClientBoard.cshtml" />
+		<None Include="Views\Pages\PersonBoard.cshtml" />
+		<None Include="Views\Pages\ProjectBoard.cshtml" />
+		<None Include="wwwroot\styles\webFormsControls\checkbox.scss" />
+		<None Include="wwwroot\styles\webFormsControls\radio.scss" />
+		<None Include="wwwroot\styles\webFormsControls\_controls.scss" />
+		<None Include="wwwroot\styles\webFormsImports\_common.scss" />
+		<None Include="wwwroot\styles\webFormsImports\Print.scss" />
+		<None Include="wwwroot\styles\webFormsImports\typeaheadjs.scss" />
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="wwwroot\lib\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\Olive.Microservices.Hub\Olive.Microservices.Hub.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Update="Boards.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Features.Widgets.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Services.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Features.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+  <UsingTask AssemblyFile="wwwroot\Styles\build\SassCompiler.exe" TaskName="WebCompiler.CompilerBuildTask" />
+  <UsingTask AssemblyFile="wwwroot\Styles\build\SassCompiler.exe" TaskName="WebCompiler.CompilerCleanTask" />
+  <Target Name="WebCompile" AfterTargets="PostBuildEvent" Condition="'$(RunWebCompiler)' != 'False'">
+    <WebCompiler.CompilerBuildTask ContinueOnError="true" FileName="$(MSBuildProjectDirectory)\compilerconfig.json" />
+  </Target>
+  <Target Name="WebCompileClean" AfterTargets="CoreClean" Condition="'$(RunWebCompiler)' != 'False'">
+    <WebCompiler.CompilerCleanTask ContinueOnError="true" FileName="$(MSBuildProjectDirectory)\compilerconfig.json" />
+  </Target>
+</Project>

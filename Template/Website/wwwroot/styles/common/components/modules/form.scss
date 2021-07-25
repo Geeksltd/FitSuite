@@ -1,0 +1,161 @@
+﻿///<reference path="../../utilities/utilities">
+
+$col3-within-col11: 27.272727272%;
+$col9-within-col11: 72.727272728%;
+
+.form-control[data-control=date-picker] { width: 1%;
+    & + .input-group-addon { position: initial }
+}
+
+// Search or form
+.group-control {
+    .input-group {
+        .input-group-addon {
+            button, a, i { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+            .user-help, .fa-calendar {
+                @extend .btn;
+                @extend .btn-secondary;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                color: $gray-600;
+            }
+        }
+    }
+}
+
+
+/* Forms */
+
+.pane { padding: 2rem; background-color: #fff; margin-bottom: 2.5rem; box-shadow: #888 0 3px 12px -8px; border-radius: 5px; }
+
+.form-group.row {
+    .control-label {
+        @include make-column-lg(3);
+        max-width: 150px !important;
+        padding-top:5px;
+    }
+    .group-control {
+        @include make-column-lg(9);
+    }
+
+    .subform-group-control {
+        @include make-column-lg(8);
+    }
+}
+
+.file-upload {
+
+    .validation { display: none; }
+
+    .current-file {
+        & { display: none; }
+
+        a { color: $gray-600; }
+    }
+
+    .progress {
+        & { min-width: 150px; height: 33px; margin-bottom: 0; margin-left:10px; }
+
+        .progress-bar { width: 0; }
+
+        input.form-control { background-color: transparent; color: #fff; border: none; position: absolute; }
+    }
+
+    input[type=file] { display: none; }
+
+    .delete-file {
+        @extend .btn-secondary;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        z-index: 2;
+        height: 100%;
+        min-width: 30px !important;
+        min-height: 25px;
+        padding-top: 9px;
+        color: $gray-600;
+    }
+
+    .file-target { cursor: pointer; }
+}
+
+form {
+    .form-body {
+        .form-tabs-header {
+            @extend .nav;
+            @extend .nav-tabs;
+        }
+
+        .tab-content { padding: 20px; }
+
+        h3 { margin-bottom: 1rem; margin-top: 2rem; color: $gray-400; }
+    }
+
+    .subform-item a.delete-button {
+        @extend .btn;
+        @extend .btn-secondary;
+        i { color: $gray-600; }
+    }
+
+    .horizontal-subform {
+        & {
+            @include make-column-lg(12);
+        }
+
+        table {
+            th { font-weight: normal; }
+
+            .group-control {
+                @include make-column-lg(8);
+            }
+
+            .form-group { margin-bottom: 0; margin-right: 10px; }
+
+            tbody > tr > td { border-top: 0; }
+        }
+    }
+
+    .subform-group-control {
+        @include make-column-lg(8);
+    }
+
+    .vertical-subform {
+        .subform-item {
+            @include make-row();
+
+            .subform-item-body {
+                @include make-column-lg(11);
+                .control-label { flex: 0 0 $col3-within-col11; max-width: $col3-within-col11; }
+                .group-control { flex: 0 0 $col9-within-col11; max-width: $col9-within-col11; }
+            }
+
+            .subform-delete-wrapper {
+                @include make-column-lg(1);
+                text-align: right;
+            }
+        }
+    }
+
+
+
+    .input-group.unboxed .input-group-addon { border: 0; background: none; }
+}
+
+.form-group > .group-control:not(:first-of-type):last-of-type > * {
+    margin-top: $form-group-margin-bottom;
+
+    @include media-breakpoint-up(lg) { margin-top: 0; }
+}
+
+.input-form {
+    .buttons-row {
+        .buttons { width: 100%;
+
+            .btn:not(:first-child) { margin-right: .3rem; }
+
+            button[name=Delete] { float: left; }
+        }
+
+        .buttons::after { clear: both; }
+    }
+}
