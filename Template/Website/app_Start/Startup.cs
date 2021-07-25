@@ -41,7 +41,7 @@ namespace Website
         public override async Task OnStartUpAsync(IApplicationBuilder app)
         {
             await base.OnStartUpAsync(app);
-            await new PeopleService.HubEndPoint(typeof(PeopleService.UserInfo).Assembly).Subscribe();
+            
         }
     }
 }
